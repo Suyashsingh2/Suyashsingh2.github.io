@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>!2may</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        /*  background: url(randomimg/bg2.jpg); */
+        background: #0b0615;
+      }
+      body::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#ea1f81c4, #7800ffe6);
+        clip-path: circle(12% at left 45%);
+        top: -179px;
+        left: 0;
+      }
+      body::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: linear-gradient(#050080, #ee8282);
+        clip-path: circle(23% at right 60%);
+      }
+      nav {
+        border-top: 1px solid #d2cccc5c;
+        box-shadow: 20px 20px 50px rgb(0 0 0 / 69%);
+        backdrop-filter: blur(3px);
+        border-radius: 50px;
+        margin: 13px;
+        border-left: 1px solid #d2cccc5c;
+        background-color: #858a8a24;
+        border-color: #858a8a75;
+        border-bottom-color: #858a8a75;
+      }
+      nav ul {
+        margin: 10px 3px;
+        padding: 4px 31px 17px;
+      }
+      nav ul li {
+        display: inline;
+        padding: 0px 25px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        background-color: transparent;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      nav ul li a:hover {
+        color: tomato;
+      }
+      .imgsection {
+        position: absolute;
+        /*border: 2px solid red;*/
+        height: 200px;
+        display: flex;
+        top: 467px;
+        z-index: 1;
+      }
+      .imgsection img {
+        height: 84px;
+        position: relative;
+        top: 50px;
+        left: 29px;
+        transform: rotate(-9deg);
+        /* backdrop-filter: drop-shadow(116px 18px 16px black); */
+        box-shadow: black;
+        -webkit-box-reflect: below 0px linear-gradient(transparent, #10101014);
+      }
+      .imgsection img:hover {
+        height: 87px;
+      }
+
+      #case {
+        display: flex;
+        /*border: 2px solid red; */
+        position: relative;
+        z-index: 2;
+        justify-content: center;
+        margin-top: 56px;
+      }
+      .showcase {
+        position: relative;
+        max-height: 300px;
+        animation: dance;
+        animation-duration: 3.5s;
+        animation-iteration-count: infinite;
+        animation-direction: ease-in-out;
+      }
+      @keyframes dance {
+        0% {
+          top: 23px;
+        }
+        50% {
+          top: -23px;
+        }
+        100% {
+          top: 23px;
+        }
+      }
+      .login {
+        height: 183px;
+        position: absolute;
+        top: 137px;
+        width: 400px;
+        left: 55px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #ffffff0f;
+        z-index: 3;
+        border-radius: 15px;
+        box-shadow: 20px 20px 50px rgb(0 0 0);
+        border-left: 1px solid #ffffff2b;
+        border-top: 1px solid #ffffff2b;
+        backdrop-filter: blur(2px);
+        word-wrap: wrap;
+        color: #ee8282;
+
+        padding: 7px 18px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      .login p {
+        display: flex;
+        align-items: flex-end;
+      }
+      .play {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        /* max-height: 36px; */
+        margin: 3px 130px;
+        background-color: #60e814;
+        padding: 11px;
+        border: none;
+        border-radius: 3px;
+        font-size: 15px;
+        cursor: pointer;
+        color: white;
+      }
+      .play:hover {
+        color: tomato;
+      }
+      .display {
+        position: absolute;
+        height: 310px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+        width: 400px;
+        top: 106px;
+        background-color: #ffffff0f;
+        box-shadow: 20px 20px 50px rgb(0 0 0);
+        border-left: 1px solid #ffffff2b;
+        border-top: 1px solid #ffffff2b;
+        right: 13%;
+        border-radius: 10px;
+        backdrop-filter: blur(3px);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      #clock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+      #clock :nth-child(odd) {
+        background-color: #ff17b2;
+        padding: 18px;
+        border-radius: 8px;
+        backdrop-filter: blur(3px);
+        border-top: 1px solid #ffffff40;
+        border-left: 1px solid #ffffff40;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #00000040);
+      }
+      #display2 {
+        border: 2px solid rgb(251, 255, 0);
+        position: absolute;
+        height: 400px;
+        display: none;
+        z-index: 3;
+        width: 400px;
+        top: 106px;
+        background-color: #ffffff1a;
+        right: 13%;
+        border-radius: 10px;
+        backdrop-filter: blur(3px);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div id="case">
+      <img class="showcase" src="randomimg/oct1.png" alt="" />
+    </div>
+    <div class="imgsection">
+      <img
+        src="randomimg/coffee.png"
+        onclick="fun('randomimg/coffee.png')"
+        alt=""
+      />
+      <img
+        src="randomimg/oct2.png"
+        onclick="fun('randomimg/oct2.png')"
+        alt=""
+      />
+    </div>
+    <div class="login">
+      <button onclick="fun2()" class="play">CLOCK</button>
+      <button onclick="fun3()" class="play">PLAY 2</button>
+    </div>
+    <div id="display" class="display">
+      <div id="clock">
+        <h1 id="hour">00</h1>
+        <h1 class="dot">:</h1>
+        <h1 id="minute">00</h1>
+        <h1 class="dot">:</h1>
+        <h1 id="second">00</h1>
+      </div>
+    </div>
+    <div id="display2" class="display">
+      <div id="in">
+        Predict your number
+        <form action="">
+          <input type="number" id="pred" />
+          <input type="submit" id="inp" onclick="game()" />
+        </form>
+      </div>
+    </div>
+  </body>
+  <script>
+    function fun(anything) {
+      document.querySelector(".showcase").src = anything;
+    }
+    function fun2() {
+      let a = document.getElementById("display");
+      if (a.style.display != "flex") {
+        a.style.display = "flex";
+      } else if ((a.style.display = "flex")) {
+        a.style.display = "none";
+      }
+      let b = document.getElementById("display2");
+      if ((b.style.display = "flex")) {
+        b.style.display = "none";
+      }
+      clock();
+    }
+    function fun3() {
+      let a = document.getElementById("display2");
+      if (a.style.display != "flex") {
+        a.style.display = "flex";
+      } else if ((a.style.display = "flex")) {
+        a.style.display = "none";
+      }
+      let b = document.getElementById("display");
+      if ((b.style.display = "flex")) {
+        b.style.display = "none";
+      }
+    }
+    function clock() {
+      let hours = document.getElementById("hour");
+      let minutes = document.getElementById("minute");
+      let seconds = document.getElementById("second");
+      seconds.style.color = "yellow";
+      /* ampm.style.color = "#00e7ff"; */
+
+      let h = new Date().getHours();
+      let m = new Date().getMinutes();
+      let s = new Date().getSeconds();
+
+      /* while (h > 12) {
+        let ampm = (document.getElementById("ampm").innerHTML = "PM");
+      } */
+      if (h > 12) {
+        h = h - 12;
+      }
+      if (h < 10) {
+        h = "0" + h;
+      }
+      if (m < 10) {
+        m = "0" + m;
+      }
+      if (s < 10) {
+        s = "0" + s;
+      }
+
+      hours.innerHTML = h;
+      minutes.innerHTML = m;
+      seconds.innerHTML = s;
+    }
+    setInterval(clock, 1000);
+
+    function game() {
+      let inpu = document.getElementById("inp");
+      let pre = document.getElementById("pred");
+
+      let su = Math.floor(Math.random() * 6 + 1);
+      alert("the no is" + su);
+      if (pre == su) {
+        alert("You predicted right !");
+      } else if (pre != su) {
+        alert("you lost !");
+      }
+    }
+  </script>
+</html>
